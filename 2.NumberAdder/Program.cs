@@ -7,7 +7,7 @@ class Program
         string input;
         int number = 1;
         int sum = 0;
-        Console.WriteLine("Привет! Введи неколько чисел через enter, а я буду считать их сумму");
+        Console.WriteLine("Привет! Введи неколько чисел через enter, а я буду считать их сумму до тех пор, пока ты не введешь ноль");
         while (number != 0)
         {
             input = Console.ReadLine();

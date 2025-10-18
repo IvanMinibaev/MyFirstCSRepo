@@ -7,16 +7,16 @@ class Program
     {
         Console.WriteLine("Добро пожаловать!\nЭто абсолютно точно не мошенническая программа проверки паролей.\nПожалуйста, введите пароли от всех ваших аккаунтов, а мы проверим, насколько они безопасны :)");
         string password;
-        bool nonumber;
-        bool noletter;
-        bool nosign;
+        bool noNumber;
+        bool noLetter;
+        bool noSign;
         bool perfect;
         password = Console.ReadLine();
         while (password != "exit")
         {
-            nonumber = true;
-            noletter = true;
-            nosign = true;
+            noNumber = true;
+            noLetter = true;
+            noSign = true;
             perfect = true;
 
             if (password.Length < 8)
@@ -28,22 +28,22 @@ class Program
             for (int i = 0; i < password.Length; i++)
             {
                 if (Char.IsNumber(password[i]))
-                    nonumber = false;
+                    noNumber = false;
                 else
                     if (Char.IsUpper(password[i]))
-                    noletter = false;
+                    noLetter = false;
                 else
                     if (!Char.IsLetter(password[i]))
-                    nosign = false;
+                    noSign = false;
             }
 
-            if (nonumber)
+            if (noNumber)
                 Console.WriteLine("В пароле нет ни одной цифры");
-            if (noletter)
+            if (noLetter)
                 Console.WriteLine("В пароле нет ни одной заглавной буквы");
-            if (nosign)
+            if (noSign)
                 Console.WriteLine("В пароле нет ни одного специального символа");
-            if ((!nosign) && (!noletter) && (!nonumber) && (perfect))
+            if ((!noSign) && (!noLetter) && (!noNumber) && (perfect))
                 Console.WriteLine("У Вас надежный пороль!\n (Напишите exit вместо пароля если хотите выйти)");
             
             password = Console.ReadLine();
